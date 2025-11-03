@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/minimal-notebook:2025-09-30
+FROM jupyter/minimal-notebook:x86_64-python-3.11
 
 COPY requirements.txt /tmp/requirements.txt
 
@@ -16,4 +16,3 @@ USER $NB_USER
 WORKDIR /mlsteam/lab
 
 CMD ["sh", "-c", "start-notebook.py --port=${JUPYTER_PORT:-8888} --NotebookApp.token='' --NotebookApp.password=''"]
-
